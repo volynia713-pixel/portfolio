@@ -256,8 +256,11 @@ header img:hover {
             run('l3', 1300);
 
             setTimeout(() => {
-                window.location.href = "https://t.me/WwwValera?text=Инициализация_проекта";
-            }, 2200);
+    const tgNick = 'WwwValera'; 
+    const message = 'Инициализация проекта';
+    
+    window.location.href = `https://t.me/${tgNick}?text=${encodeURIComponent(message)}`;
+}, 2200);
         }
     </script>
 </body>
