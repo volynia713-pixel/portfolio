@@ -3,20 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-	<title>Valeriy | Multi-Disciplinary Designer & Dev</title>
+    <title>Valeriy | Multi-Disciplinary Designer & Dev</title>
 
-<meta name="description" content="Проектирование визуальных систем: от идеи и промпта до чистого кода. Дизайн, Frontend, AI и Видео.">
-
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://volynia713-pixel.github.io/portfolio/">
-<meta property="og:title" content="Valery — Production Engine">
-<meta property="og:description" content="Комплексная разработка цифровых продуктов: UI/UX, Frontend и AI-контент.">
-
-<meta property="og:image" content="https://volynia713-pixel.github.io/portfolio/og-preview.jpg">
-<meta property="vk:image" content="https://volynia713-pixel.github.io/portfolio/og-preview.jpg">
-
-<meta name="twitter:card" content="summary_large_image">
-    <title>Flagman | Multi-Disciplinary Designer & Dev</title>
+    <meta name="description" content="Проектирование визуальных систем: от идеи и промпта до чистого кода. Дизайн, Frontend, AI и Видео.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://volynia713-pixel.github.io/portfolio/">
+    <meta property="og:title" content="Valery — Production Engine">
+    <meta property="og:description" content="Комплексная разработка цифровых продуктов: UI/UX, Frontend и AI-контент.">
+    <meta property="og:image" content="https://volynia713-pixel.github.io/portfolio/og-preview.jpg">
+    <meta property="vk:image" content="https://volynia713-pixel.github.io/portfolio/og-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    
     <style>
         :root {
             --bg: #050505;
@@ -38,7 +35,6 @@
             line-height: 1.5;
         }
 
-        /* Video BG */
         .video-bg {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             z-index: -2; object-fit: cover; opacity: 0.35;
@@ -55,7 +51,6 @@
         .status { color: var(--accent); display: flex; align-items: center; gap: 8px; }
         .status::before { content: ''; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); }
 
-        /* Bento Grid */
         .bento {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -76,11 +71,9 @@
 
         .card:hover { transform: translateY(-5px); border-color: rgba(255, 255, 255, 0.2); }
 
-        /* Элементы управления сеткой */
         .hero { grid-column: span 2; grid-row: span 2; justify-content: center; }
         .full-width { grid-column: span 2; }
 
-        /* Типографика */
         .tag { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 12px; display: block; font-weight: 700; }
         h1 { font-size: clamp(2.2rem, 5vw, 4rem); line-height: 0.95; letter-spacing: -0.04em; margin-bottom: 20px; }
         h3 { font-size: 1.4rem; margin-bottom: 10px; font-weight: 700; letter-spacing: -0.02em; }
@@ -93,7 +86,6 @@
         }
         .btn:hover { transform: scale(1.03); box-shadow: 0 0 25px rgba(0, 255, 163, 0.4); }
 
-        /* Адаптивность */
         @media (max-width: 1024px) {
             .bento { grid-template-columns: repeat(2, 1fr); }
         }
@@ -107,40 +99,19 @@
             .status { justify-content: center; }
         }
 
-        /* Эффекты инициализации */
         .glitch-screen { position: fixed; top:0; left:0; width:100%; height:100%; background: var(--accent); z-index: 1000; display: none; opacity: 0.15; pointer-events: none; animation: glitch 0.15s infinite; }
         .terminal { position: fixed; top:50%; left:50%; transform: translate(-50%, -50%); background: #000; border: 1px solid var(--accent); padding: 25px; border-radius: 20px; z-index: 1001; display: none; font-family: monospace; width: 280px; box-shadow: 0 0 60px rgba(0,255,163,0.2); }
         @keyframes glitch { 0% { transform: translate(2px, -2px); } 50% { transform: translate(-2px, 2px); } 100% { transform: translate(0); } }
 		
 		header img {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-header img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(0, 255, 163, 0.5);
-}
-
-/* Находим картинку внутри хедера */
-header img {
-    /* ЗАДАЕМ ПЛАВНОСТЬ: свойство, время, кривая скорости */
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
-    
-    /* Убедимся, что трансформация идет от центра */
-    transform-origin: center; 
-}
-
-/* Эффект при наведении мышкой */
-header img:hover {
-    /* УВЕЛИЧЕНИЕ: 1.15 — это +15% к размеру */
-    transform: scale(1.15);
-    
-    /* ДОБАВЛЯЕМ СВЕЧЕНИЕ для акцента */
-    box-shadow: 0 0 25px rgba(0, 255, 163, 0.5);
-    
-    /* Делаем border чуть ярче */
-    border-color: rgba(0, 255, 163, 1) !important;
-}
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform-origin: center; 
+        }
+        header img:hover {
+            transform: scale(1.15);
+            box-shadow: 0 0 25px rgba(0, 255, 163, 0.5);
+            border-color: rgba(0, 255, 163, 1) !important;
+        }
     </style>
 </head>
 <body>
@@ -152,26 +123,25 @@ header img:hover {
 
     <div class="container">
         <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; padding: 0 10px;">
-    <div style="display: flex; align-items: center; gap: 15px;">
-        <div style="position: relative; width: 50px; height: 50px;">
-            <img src="Валера1.jpg" alt="Lead Engineer" 
-                 style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 1px solid var(--accent); box-shadow: 0 0 15px rgba(0, 255, 163, 0.2);">
-            <div style="position: absolute; bottom: 0; right: 0; width: 12px; height: 12px; background: var(--accent); border-radius: 50%; border: 2px solid var(--bg); box-shadow: 0 0 10px var(--accent);"></div>
-        </div>
-        
-        <div>
-            <div class="status" style="font-size: 1rem; font-weight: 700;">Lead Production Engine</div>
-            <div style="color: var(--text-dim); font-size: 0.8rem; font-weight: 500;">Digital Alchemist // Valeriy</div>
-        </div>
-    </div>
-
-    <div style="text-align: right; color: var(--text-dim); font-size: 0.85rem;">
-        <div>2026 // Portofolio.OS</div>
-        <div style="font-size: 0.75rem; color: var(--accent); opacity: 0.8;">v.4.1_Stable</div>
-    </div>
-</header>
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div style="position: relative; width: 50px; height: 50px;">
+                    <img src="Валера1.jpg" alt="Lead Engineer" 
+                         style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 1px solid var(--accent); box-shadow: 0 0 15px rgba(0, 255, 163, 0.2);">
+                    <div style="position: absolute; bottom: 0; right: 0; width: 12px; height: 12px; background: var(--accent); border-radius: 50%; border: 2px solid var(--bg); box-shadow: 0 0 10px var(--accent);"></div>
+                </div>
+                <div>
+                    <div class="status" style="font-size: 1rem; font-weight: 700;">Lead Production Engine</div>
+                    <div style="color: var(--text-dim); font-size: 0.8rem; font-weight: 500;">Digital Alchemist // Valeriy</div>
+                </div>
+            </div>
+            <div style="text-align: right; color: var(--text-dim); font-size: 0.85rem;">
+                <div>2026 // Portofolio.OS</div>
+                <div style="font-size: 0.75rem; color: var(--accent); opacity: 0.8;">v.4.1_Stable</div>
+            </div>
+        </header>
 
         <div class="bento">
+            <!-- Hero Card -->
             <div class="card hero">
                 <div>
                     <span class="tag">Digital Craftsman</span>
@@ -181,22 +151,24 @@ header img:hover {
                 <button class="btn" onclick="startInit()">Инициализировать проект</button>
             </div>
 
+            <!-- Design Card -->
             <div class="card">
-    <div>
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-            <span class="tag">Design</span>
-            <div style="font-size: 0.7rem; color: var(--accent); border: 1px solid var(--accent); padding: 2px 8px; border-radius: 4px;">LIVE</div>
-        </div>
-        <h3>Systemic Design</h3>
-        <p>Масштабируемые UI KIT. Переменные, компоненты, токены и логика интерфейсов.</p>
-    </div>
-    <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
-        <span style="font-size: 0.8rem; color: var(--text-dim);">Figma / Design Tokens</span>
-        <a href="https://volynia713-pixel.github.io/Design-System/" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 700; font-size: 0.9rem;">Смотреть↗</a>
-    </div>
-</div>
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <span class="tag">Design</span>
+                        <div style="font-size: 0.7rem; color: var(--accent); border: 1px solid var(--accent); padding: 2px 8px; border-radius: 4px;">LIVE</div>
+                    </div>
+                    <h3>Systemic Design</h3>
+                    <p>Масштабируемые UI KIT. Переменные, компоненты, токены и логика интерфейсов.</p>
+                </div>
+                <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.8rem; color: var(--text-dim);">Figma / Design Tokens</span>
+                    <a href="https://volynia713-pixel.github.io/Design-System/" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 700; font-size: 0.9rem;">Смотреть↗</a>
+                </div>
+            </div>
 
-			<div class="card">
+            <!-- Mobile / Code Card -->
+            <div class="card">
     <div>
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
             <span class="tag">Mobile / Code</span>
@@ -205,12 +177,13 @@ header img:hover {
         <h3>Nutrition App</h3>
         <p>Полноценное Android-приложение для нутрициолога: интерфейс, логика, настройка окружения (Android Studio, VSC) и сборка в APK.</p>
     </div>
-    <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
-        <span style="font-size: 0.8rem; color: var(--text-dim);">Android / APK / Mobile Dev</span>
-        <a href="https://volynia713-pixel.github.io/Nutritionaist/" style="color: var(--accent); text-decoration: none; font-weight: 700; font-size: 0.9rem;">Смотреть↗</a>
+    <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-end;">
+        <span style="font-size: 0.8rem; color: var(--text-dim); line-height: 1.4;">Android / APK / Mobile Dev</span>
+        <a href="https://volynia713-pixel.github.io/Nutritionaist/" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 700; font-size: 0.9rem;">Смотреть↗</a>
     </div>
 </div>
-			
+            
+            <!-- Featured Case Card -->
             <div class="card full-width" style="border-color: rgba(0, 255, 163, 0.2);">
                 <div>
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
@@ -226,62 +199,83 @@ header img:hover {
                 </div>
             </div>
 
+            <!-- AI Synthesis Card -->
+            <div class="card">
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <span class="tag">Next-Gen</span>
+                        <div style="font-size: 0.7rem; color: var(--accent); border: 1px solid var(--accent); padding: 2px 8px; border-radius: 4px;">ACTIVE</div>
+                    </div>
+                    <h3>AI Synthesis</h3>
+                    <p>Промпт-инжиниринг как инструмент создания уникального визуального контента.</p>
+                </div>
+                <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.8rem; color: var(--text-dim);">Prompt Engineering / AI</span>
+                    <a href="https://volynia713-pixel.github.io/-/" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 700; font-size: 0.9rem;">Смотреть↗</a>
+                </div>
+            </div>
+
+            <!-- Motion Lab Card -->
+            <div class="card">
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <span class="tag">Cinematic</span>
+                        <div style="font-size: 0.7rem; color: var(--accent); border: 1px solid var(--accent); padding: 2px 8px; border-radius: 4px;">DEMO</div>
+                    </div>
+                    <h3>Motion Lab</h3>
+                    <p>Кинематографичная 3D-сцена с жидкой хромированной сферой. Реакция на мышь, bloom, атмосферный шум.</p>
+                </div>
+                <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.8rem; color: var(--text-dim);">Three.js / React / Vercel</span>
+                    <a href="https://interactive-motion-portfolio.vercel.app/" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 700; font-size: 0.9rem;">Смотреть↗</a>
+                </div>
+            </div>
+
+            <!-- Video Portfolio Card -->
             <div class="card">
     <div>
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-            <span class="tag">Next-Gen</span>
-            <div style="font-size: 0.7rem; color: var(--accent); border: 1px solid var(--accent); padding: 2px 8px; border-radius: 4px;">ACTIVE</div>
+            <span class="tag">Video Portfolio</span>
+            <div style="font-size: 0.7rem; color: var(--accent); border: 1px solid var(--accent); padding: 2px 8px; border-radius: 4px;">VIDEO</div>
         </div>
-        <h3>AI Synthesis</h3>
-        <p>Промпт-инжиниринг как инструмент создания уникального визуального контента.</p>
+        <h3>Motion Reel</h3>
+        <p>Режиссура, монтаж, motion-дизайн — подборка ключевых работ в удобном плеере.</p>
     </div>
-    <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
-        <span style="font-size: 0.8rem; color: var(--text-dim);">Prompt Engineering / AI</span>
-        <a href="https://volynia713-pixel.github.io/-/" style="color: var(--accent); text-decoration: none; font-weight: 700; font-size: 0.9rem;">Смотреть↗</a>
+    <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-end;">
+        <span style="font-size: 0.8rem; color: var(--text-dim); line-height: 1.4;">Cinematic / Motion Design</span>
+        <button onclick="location.href='video-reel.html'" style="color: var(--accent); background: none; border: none; font-weight: 700; font-size: 0.9rem; cursor: pointer;">Смотреть↗</button>
     </div>
 </div>
 
+            <!-- Case Studies / Slides Card -->
             <div class="card">
-    <div>
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-            <span class="tag">Motion</span>
-            <div style="font-size: 0.7rem; color: var(--accent); border: 1px solid var(--accent); padding: 2px 8px; border-radius: 4px;">REEL</div>
-        </div>
-        <h3>Video Visuals</h3>
-        <p>Режиссура и монтаж динамичных роликов для сильных брендов.</p>
-    </div>
-    <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
-        <span style="font-size: 0.8rem; color: var(--text-dim);">Editing / Production</span>
-        <a href="https://drive.google.com/file/d/1geUFkdgIG0W4ePR6-WgPyEezEeTHZ2Co/preview" onclick="openVideoModal(); return false;" style="color: var(--accent); text-decoration: none; font-weight: 700; font-size: 0.9rem;">Смотреть↗</a>
-    </div>
-</div>
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <span class="tag">Case Studies</span>
+                        <div style="font-size: 0.7rem; color: var(--accent); border: 1px solid var(--accent); padding: 2px 8px; border-radius: 4px;">SLIDES</div>
+                    </div>
+                    <h3>Case Studies</h3>
+                    <p>Кейсы, концепции, визуальные исследования — в формате удобной галереи со слайдами.</p>
+                </div>
+                <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.8rem; color: var(--text-dim);">Interactive Gallery</span>
+                    <button onclick="location.href='slides.html'" style="color: var(--accent); background: none; border: none; font-weight: 700; font-size: 0.9rem; cursor: pointer;">Открыть↗</button>
+                </div>
+            </div>
 
-    <div class="card">
-    <div>
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-            <span class="tag">Cinematic</span>
-            <div style="font-size: 0.7rem; color: var(--accent); border: 1px solid var(--accent); padding: 2px 8px; border-radius: 4px;">DEMO</div>
-        </div>
-        <h3>Motion Lab</h3>
-        <p>Кинематографичная 3D-сцена с жидкой хромированной сферой. Реакция на мышь, bloom, атмосферный шум.</p>
-    </div>
-    <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
-        <span style="font-size: 0.8rem; color: var(--text-dim);">Three.js / React / Vercel</span>
-        <a href="https://interactive-motion-portfolio.vercel.app/" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 700; font-size: 0.9rem;">Смотреть↗</a>
-    </div>
-</div>
-
-    <div class="card">
+            <!-- Manifesto Card -->
+            <!-- Strategy Card (full-width) -->
+<div class="card full-width" style="border-color: rgba(0, 255, 163, 0.2);">
     <div>
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
             <span class="tag">Strategy</span>
             <div style="font-size: 0.7rem; color: var(--accent); border: 1px solid var(--accent); padding: 2px 8px; border-radius: 4px;">MANIFESTO</div>
         </div>
         <h3>Smart Web Design</h3>
-        <p>Дизайн как управляемая система получения результата. AI-assisted pipeline, от идеи до handoff.</p>
+        <p>Дизайн как управляемая система получения результата. AI-assisted pipeline, от идеи до handoff. Системный подход к интерфейсам и процессам.</p>
     </div>
     <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
-        <span style="font-size: 0.8rem; color: var(--text-dim);">Systemic Approach / AI</span>
+        <span style="font-size: 0.8rem; color: var(--text-dim);">Systemic Approach / AI / Pipeline</span>
         <a href="https://volynia713-pixel.github.io/portfolio-manifesto/" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 700; font-size: 0.9rem;">Читать↗</a>
     </div>
 </div>
@@ -314,11 +308,8 @@ header img:hover {
             run('l3', 1300);
 
             setTimeout(() => {
-    const tgNick = 'WwwValera'; 
-    const message = 'Инициализация проекта';
-    
-    window.location.href = `https://t.me/${tgNick}?text=${encodeURIComponent(message)}`;
-}, 2200);
+                window.location.href = `https://t.me/WwwValera?text=${encodeURIComponent('Инициализация проекта')}`;
+            }, 2200);
         }
     </script>
 </body>
