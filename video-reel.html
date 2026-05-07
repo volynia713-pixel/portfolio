@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Video Portfolio | Valeriy</title>
+    <style>
+        :root {
+            --bg: #050505;
+            --surface: rgba(255, 255, 255, 0.04);
+            --accent: #00ffa3;
+            --text: #ffffff;
+            --text-dim: #999;
+            --border: rgba(255, 255, 255, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', system-ui, sans-serif;
+            min-height: 100vh;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+        }
+        .back-link:hover { opacity: 0.7; }
+        .back-link.hidden { display: none; }
+
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .subtitle { color: var(--text-dim); margin-bottom: 40px; }
+
+        .video-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        .video-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 24px 28px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .video-item:hover {
+            border-color: var(--accent);
+            transform: translateX(8px);
+        }
+        .video-item .info h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.3rem;
+        }
+        .video-item .info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-dim);
+        }
+        .video-item .duration {
+            font-size: 0.8rem;
+            color: var(--accent);
+            background: rgba(0,255,163,0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .player-view {
+            display: none;
+            flex-direction: column;
+            height: 85vh;
+        }
+        .player-view.active {
+            display: flex;
+        }
+        .back-to-list {
+            background: none;
+            border: none;
+            color: var(--accent);
+            font-size: 14px;
+            cursor: pointer;
+            padding: 12px 0;
+            text-align: left;
+            width: fit-content;
+            margin-bottom: 16px;
+        }
+        .video-container {
+            flex: 1;
+            position: relative;
+            background: #000;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+        .video-container iframe,
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            min-height: 500px;
+            border: none;
+        }
+
+        @media (max-width: 640px) {
+            .container { padding: 20px 15px; }
+            .video-item { padding: 18px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link" id="backLink">← Назад в портфолио</a>
+        <h1>Video Portfolio</h1>
+
+        <div id="videoList" class="video-list"></div>
+
+        <div id="playerView" class="player-view">
+            <button class="back-to-list" onclick="showList()">← Назад к списку</button>
+            <div class="video-container">
+                <iframe id="videoPlayer" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const videos = [
+            {
+                id: 1,
+                title: "Flagman Production — промо",
+                description: "Динамичный промо-ролик для производственного портала. Режиссура, монтаж, motion-дизайн.",
+                duration: "0:59",
+                url: "https://drive.google.com/file/d/1geUFkdgIG0W4ePR6-WgPyEezEeTHZ2Co/preview"
+            },
+            {
+                id: 2,
+                title: "Born from Light",
+                description: "Ювелирка. Промо-ролик. Режиссура, монтаж, motion-дизайн.",
+                duration: "0:34",
+                url: "https://drive.google.com/file/d/10DIgWsHVfmnS8JziUctC1PZyLG16BHkw/preview"
+            },
+			{
+                id: 3,
+                title: "Ephemeral Metamorphosis",
+                description: "Путешествие через формы, которые длятся одно мгновение. От ростка сквозь асфальт до танца в пустыне.",
+                duration: "1:33",
+                url: "https://drive.google.com/file/d/1dcHIXYTPwwOG9c3gJIo629OVYyW0les2/preview"
+            }
+        ];
+
+        let currentVideo = null;
+
+        function renderList() {
+            const container = document.getElementById('videoList');
+            container.innerHTML = videos.map(v => `
+                <div class="video-item" onclick="openVideo(${v.id})">
+                    <div class="info">
+                        <h3>${v.title}</h3>
+                        <p>${v.description}</p>
+                    </div>
+                    <div class="duration">${v.duration}</div>
+                </div>
+            `).join('');
+        }
+
+        function openVideo(id) {
+            currentVideo = videos.find(v => v.id === id);
+            if (!currentVideo) return;
+            document.getElementById('videoPlayer').src = currentVideo.url;
+            document.getElementById('videoList').style.display = 'none';
+            document.getElementById('playerView').classList.add('active');
+            // Скрываем верхнюю кнопку
+            document.getElementById('backLink').classList.add('hidden');
+        }
+
+        function showList() {
+            document.getElementById('videoList').style.display = 'flex';
+            document.getElementById('playerView').classList.remove('active');
+            document.getElementById('videoPlayer').src = '';
+            // Показываем верхнюю кнопку
+            document.getElementById('backLink').classList.remove('hidden');
+        }
+
+        renderList();
+    </script>
+</body>
+</html>
